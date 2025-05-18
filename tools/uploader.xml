@@ -1,0 +1,38 @@
+<tool id="interactive_test_uploader" tool_type="interactive" name="upload your data in the app" version="0.1">
+    <requirements>
+        <container type="docker">
+            quay.io/chiujunhao24/upload:0.1
+        </container>
+    </requirements>
+    <entry_points>
+        <entry_point name="Test Uploader" requires_domain="True">
+            <port>
+                8501
+            </port>
+            <url>
+                /
+            </url>
+        </entry_point>
+    </entry_points>
+    <command>
+        <![CDATA[
+        streamlit run /upload-download/uploader.py
+            --browser.gatherUsageStats false
+
+        ]]>
+    </command>
+    <stdio>
+        <exit_code range="0:0" level="log"/>
+    </stdio>
+    <inputs>
+    </inputs>
+    <outputs>
+        <data name="chat_history" format="json" label="${tool.name}"/>
+    </outputs>
+    <tests>
+        <test>
+        </test>
+    </tests>
+    <help>
+    </help>
+</tool>
