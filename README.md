@@ -6,8 +6,6 @@ To get started with this example, follow the steps below to set up and run the t
 Create a virtual environment:
 ```bash
 python -m venv .venv
-
-
 ```
 
 On macOS or Linux, activate the virtual environment:
